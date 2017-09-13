@@ -1,0 +1,31 @@
+{
+  "e-commerce": {
+    "id": "48bacab0-68f2-413e-b53d-62bec30e8e61",
+    "context": {
+      "shopping": {
+        "id": "001e48b3-1a69-479a-8bbc-30437a53af08",
+        "aggregates": {
+          "cart": {
+            "id": "2e48be72-7c90-4686-910f-1296b3b49a72",
+            "commands": {
+              "create": "003f5144-39a8-4590-9ba0-01f39655cb2f",
+              "add-product": "73a607b6-53f6-47ce-9359-bdfdf2915fc3",
+              "change-product-quantity": "831e114f-6bfc-4bd6-90dd-df9b6902c2f8",
+              "remove-product" : "",
+              "checkout" : ""
+            },
+            "events": {
+              "created" : "",
+              "product-added" : "",
+              "product-quantity-changed" : "",
+              "product-removed" : "",
+              "checked-out" : "",
+              "empty" : "",
+              "full" : ""
+            }
+          }
+        }
+      }
+    }
+  }
+}

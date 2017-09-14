@@ -9,6 +9,7 @@ import (
 type Projector struct {
 
 	aggregate.Projector
+	State *State
 }
 
 func (self *Projector) Handle(e domain.Event) error {

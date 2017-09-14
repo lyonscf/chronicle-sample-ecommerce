@@ -21,6 +21,18 @@ var DescriptorMap = map[string]*object.DescriptorNode{
 						Children: map[string]*object.DescriptorNode{
 							"event": &object.DescriptorNode{
 								Descriptor: nil,
+								Children: map[string]*object.DescriptorNode{
+									"created": &object.DescriptorNode{
+										Descriptor: &object.Descriptor{
+											TypeId: uuid.FromStringOrNil("4c37b81c-dc80-4ad9-aee0-da97d32c54a2"),
+											AggregateTypeId: CartAggregateId,
+											ContextTypeId: ShoppingContextId,
+											DomainTypeId: EcommerceDomainId,
+											Version: 1,
+										},
+										Children: nil,
+									},
+								},
 							},
 							"command": &object.DescriptorNode{
 								Descriptor: nil,

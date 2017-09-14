@@ -25,6 +25,10 @@ var CommandGenerator = command.NewGenerator(
 	ObjectGenerator,
 )
 
+var EventGenerator = event.NewGenerator(
+	ObjectGenerator,
+)
+
 func Handle(identifier core.Identifier, payload core.Payload) (events []*event.Event, err error) {
 	return CommandHandler.Handle(
 		CommandGenerator.New(

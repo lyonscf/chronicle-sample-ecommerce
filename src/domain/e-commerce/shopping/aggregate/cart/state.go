@@ -1,7 +1,7 @@
 package cart
 
 import (
-	"github.com/with-hindsight/chronicle/src/domain/core"
+	"github.com/with-hindsight/chronicle/src/domain"
 	"github.com/emirpasic/gods/sets/hashset"
 	"github.com/emirpasic/gods/sets"
 )
@@ -11,7 +11,7 @@ type State struct {
 	IsCreated bool
 	IsCheckedOut bool
 
-	ShopperId core.Identifier
+	ShopperId domain.Identifier
 	Products sets.Set
 }
 

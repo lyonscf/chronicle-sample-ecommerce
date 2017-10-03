@@ -1,10 +1,12 @@
 package event
 
-import "github.com/with-hindsight/chronicle/src/domain/core"
-import "github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/value"
+import (
+	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/value"
+	"github.com/with-hindsight/chronicle/src/domain"
+)
 
 type ProductQuantityChanged struct {
 
-	ProductId core.Identifier
+	ProductId domain.Identifier
 	Quantity value.Quantity
 }

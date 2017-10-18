@@ -1,8 +1,6 @@
 package event
 
-import (
-	"github.com/with-hindsight/chronicle/domain"
-)
+import "github.com/with-hindsight/chronicle/domain"
 
 type Created struct {
 

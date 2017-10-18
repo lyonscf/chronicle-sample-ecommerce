@@ -6,36 +6,37 @@ import (
 	"github.com/with-hindsight/chronicle/src/domain/context/aggregate"
 )
 
-type Projector struct {}
+type Projector struct {
 
-func (self *Projector) Handle(e *context.Event, s aggregate.State) error {
+	State *State
+}
 
-	state := s.(*State)
+func (self *Projector) Handle(e *context.Event) error {
 
 	switch event := e.Payload.(type) {
 
 	case event.Created:
 
-		state.IsCreated = true
-		state.ShopperId = event.ShopperId
+		self.State.IsCreated = true
+		self.State.ShopperId = event.ShopperId
 
 		return nil
 
 	case event.ProductAdded:
 
-		state.Products.Add(event.Product.Id)
+		self.State.Products.Add(event.Product.Id)
 
 		return nil
 
 	case event.ProductRemoved:
 
-		state.Products.Remove(event.ProductId)
+		self.State.Products.Remove(event.ProductId)
 
 		return nil
 
 	case event.CheckedOut:
 
-		state.IsCheckedOut = true
+		self.State.IsCheckedOut = true
 
 		return nil
 	}

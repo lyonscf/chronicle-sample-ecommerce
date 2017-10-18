@@ -1,7 +1,7 @@
 package cart
 
 import (
-	"github.com/with-hindsight/chronicle/src/domain"
+	"github.com/with-hindsight/chronicle/domain"
 	"github.com/emirpasic/gods/sets/hashset"
 	"github.com/emirpasic/gods/sets"
 )

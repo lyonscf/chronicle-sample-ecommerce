@@ -2,17 +2,17 @@ package cart
 
 import (
 	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/event"
-	"github.com/with-hindsight/chronicle/src/domain"
+	"github.com/with-hindsight/chronicle/src/domain/context"
 	"github.com/with-hindsight/chronicle/src/domain/context/aggregate"
 )
 
 type Projector struct {}
 
-func (self *Projector) Handle(e domain.Event, s aggregate.State) error {
+func (self *Projector) Handle(e *context.Event, s aggregate.State) error {
 
 	state := s.(*State)
 
-	switch event := e.Payload().(type) {
+	switch event := e.Payload.(type) {
 
 	case event.Created:
 

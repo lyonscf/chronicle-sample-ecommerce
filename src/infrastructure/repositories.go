@@ -1,16 +1,10 @@
 package infrastructure
 
-import (
-	"github.com/with-hindsight/chronicle/src/application/repository"
-	"github.com/with-hindsight/chronicle/src/infrastructure/domain/player"
+import "github.com/with-hindsight/chronicle/infrastructure/repository"
+
+var PlayerRepository = repository.NewPlayerRepository()
+
+var AggregateRepository = repository.NewAggregateRepository(
+	AggregateStream,
+	EventLog,
 )
-
-var PlayerRepository = player.NewMemoryRepository()
-
-var AggregateRepository = repository.NewAggregateRepository()
-
-/*
-var DescriptorRepository = object.NewDescriptorRepository(
-	DescriptorMap,
-)
-*/

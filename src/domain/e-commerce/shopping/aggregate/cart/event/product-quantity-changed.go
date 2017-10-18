@@ -1,8 +1,8 @@
 package event
 
 import (
+	"github.com/with-hindsight/chronicle/domain"
 	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/value"
-	"github.com/with-hindsight/chronicle/src/domain"
 )
 
 type ProductQuantityChanged struct {

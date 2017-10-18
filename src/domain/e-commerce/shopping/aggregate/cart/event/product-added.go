@@ -4,5 +4,5 @@ import "github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shop
 
 type ProductAdded struct {
 
-	Product entity.Product
+	Product entity.Product `json:"product"`
 }

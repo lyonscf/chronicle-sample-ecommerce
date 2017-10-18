@@ -2,29 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a72fa78-85c6-4549-97b2-f1c5128f3756" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/archetype.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/infrastructure/generators.go" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/application/handler.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/identifier.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart/invariant.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart/projection.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart/projector.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart/query.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/infrastructure/descriptors.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/infrastructure/domain.json" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/invariant.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/projection.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/projector.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/query.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/infrastructure/checker.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/infrastructure/map.go" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/aggregate.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/archetype.go" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/main/main.go" afterPath="$PROJECT_DIR$/src/application/main/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/aggregate.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/aggregate.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/add-product.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/add-product.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/change-product-quantity.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/change-product-quantity.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/checkout.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/checkout.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/create.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/create.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/remove-product.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/remove-product.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/created.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/created.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-added.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-added.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-quantity-changed.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-quantity-changed.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-removed.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-removed.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/invariant.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/invariant.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/projector.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/projector.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/state.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/state.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/entity/product.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/entity/product.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/e-commerce/shopping/value/quantity.go" afterPath="$PROJECT_DIR$/src/domain/e-commerce/shopping/value/quantity.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/infrastructure/generators.go" afterPath="$PROJECT_DIR$/src/infrastructure/generators.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/infrastructure/logs.go" afterPath="$PROJECT_DIR$/src/infrastructure/logs.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/infrastructure/repositories.go" afterPath="$PROJECT_DIR$/src/infrastructure/repositories.go" />
     </list>
@@ -40,72 +42,21 @@
       <file leaf-file-name="projector.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/projector.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="924">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
-                <element signature="e#14#243#0" expanded="true" />
+                <element signature="e#14#251#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/main/main.go">
+      <file leaf-file-name="invariant.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/invariant.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="e#14#289#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generators.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/infrastructure/generators.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="890">
-              <caret line="46" column="1" lean-forward="true" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
-              <folding>
-                <element signature="e#24#423#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/create.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="e#17#77#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aggregate.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/aggregate.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding>
-                <element signature="e#14#296#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="archetype.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/archetype.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="46" column="1" lean-forward="true" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
-              <folding>
-                <element signature="e#14#278#0" expanded="true" />
-                <marker date="1506960725000" expanded="true" signature="1401:1504" ph="{...}" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,42 +67,90 @@
             <state relative-caret-position="525">
               <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
-                <element signature="e#14#150#0" expanded="true" />
+                <element signature="e#14#146#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="created.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/created.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#15#71#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/entity/product.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="e#16#158#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quantity.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/value/quantity.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="invariant.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/invariant.go">
+        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/invariant.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="273">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
-                <element signature="e#14#84#0" expanded="true" />
+                <element signature="e#22#73#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="repositories.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/infrastructure/repositories.go">
+      <file leaf-file-name="projection.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/projection.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
-                <element signature="e#24#172#0" expanded="true" />
+                <element signature="e#22#73#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logs.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/infrastructure/logs.go">
+      <file leaf-file-name="projector.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/projector.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="567">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="e#22#194#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="query.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/query.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="e#22#73#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,6 +165,9 @@
     </option>
   </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Indirect</find>
+    </findStrings>
     <replaceStrings>
       <replace>core.</replace>
     </replaceStrings>
@@ -176,27 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/projection.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/checked-out.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-added.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/empty.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/full.go" />
-        <option value="$PROJECT_DIR$/src/infrastructure/domain.json.go" />
-        <option value="$PROJECT_DIR$/src/infrastructure/domain.json" />
-        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/object/descriptor_repository.go" />
-        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/handler/handler_command.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has-active-cart/projection.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has-active-cart/projector.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has-active-cart/invariant.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has-active-cart/query.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/invariant/created.go" />
-        <option value="$USER_HOME$/Documents/go/src/github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/projector.go" />
-        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/event/generator.go" />
-        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/aggregate/projector.go" />
-        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/command/command.go" />
-        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/aggregate/snapshot.go" />
-        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/descriptor/object.go" />
-        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/command/generator.go" />
         <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/aggregate/aggregate.go" />
         <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/descriptor/aggregate.go" />
         <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context.go" />
@@ -205,28 +186,49 @@
         <option value="$PROJECT_DIR$/src/application/handler.go" />
         <option value="$PROJECT_DIR$/src/infrastructure/descriptors.go" />
         <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/infrastructure/core/uuid/identifier_generator.go" />
-        <option value="$PROJECT_DIR$/src/infrastructure/repositories.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/entity/product.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/state.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/change-product-quantity.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/create.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/remove-product.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/created.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-quantity-changed.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-removed.go" />
         <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart/invariant.go" />
         <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart/projection.go" />
-        <option value="$PROJECT_DIR$/src/infrastructure/logs.go" />
         <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate_snapshot.go" />
         <option value="$USER_HOME$/Documents/go/src/github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/archetype.go" />
         <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/projector/projector.go" />
         <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/archetype.go" />
         <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate_context.go" />
-        <option value="$PROJECT_DIR$/src/infrastructure/generators.go" />
-        <option value="$PROJECT_DIR$/src/application/main/main.go" />
-        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/projector.go" />
+        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/infrastructure/domain/context/object_generator.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/value/quantity.go" />
+        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/mapstructure/mapstructure.go" />
+        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle-storage-dynamodb/log.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-added.go" />
+        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/projector_handler.go" />
+        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/event_generator.go" />
+        <option value="$PROJECT_DIR$/src/application/main/bench.go" />
+        <option value="$PROJECT_DIR$/src/application/main/main_test.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart.go" />
         <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/aggregate.go" />
+        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/archetype.go" />
+        <option value="$USER_HOME$/Documents/go/src/github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/invariant.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/projector.go" />
+        <option value="$PROJECT_DIR$/src/infrastructure/logs.go" />
+        <option value="$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle-storage-inmemory/aggregate_stream.go" />
+        <option value="$PROJECT_DIR$/src/application/main/main.go" />
+        <option value="$PROJECT_DIR$/src/infrastructure/generators.go" />
+        <option value="$PROJECT_DIR$/src/infrastructure/repositories.go" />
+        <option value="$PROJECT_DIR$/src/infrastructure/map.go" />
         <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/invariant.go" />
+        <option value="$PROJECT_DIR$/src/infrastructure/checker.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/add-product.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/checkout.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/create.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/change-product-quantity.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/remove-product.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/created.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-quantity-changed.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-removed.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/state.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/entity/product.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/invariant.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/projection.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/projector.go" />
+        <option value="$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/query.go" />
       </list>
     </option>
   </component>
@@ -237,8 +239,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="width" value="2560" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -358,6 +360,25 @@
               <item name="domain" type="462c0819:PsiDirectoryNode" />
               <item name="e-commerce" type="462c0819:PsiDirectoryNode" />
               <item name="shopping" type="462c0819:PsiDirectoryNode" />
+              <item name="invariant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chronicle-sample-ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chronicle-sample-ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="e-commerce" type="462c0819:PsiDirectoryNode" />
+              <item name="shopping" type="462c0819:PsiDirectoryNode" />
+              <item name="invariant" type="462c0819:PsiDirectoryNode" />
+              <item name="active_carts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chronicle-sample-ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chronicle-sample-ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="e-commerce" type="462c0819:PsiDirectoryNode" />
+              <item name="shopping" type="462c0819:PsiDirectoryNode" />
               <item name="value" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -467,13 +488,13 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16084194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3013899" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25456712" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -498,73 +519,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/emirpasic/gods/sets/hashset/hashset.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding>
-            <element signature="e#350#412#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/projector.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/event/generator.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/aggregate/state.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/aggregate/projector.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/command/command.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/aggregate/snapshot.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/aggregate/descriptor.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/descriptor/object.go">
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate_context.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
@@ -572,41 +527,251 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/aggregate/aggregate.go">
+    <entry file="file://$PROJECT_DIR$/src/infrastructure/descriptors.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="399">
+          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/descriptor/aggregate.go">
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/archetype.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="723">
+          <caret line="46" column="1" lean-forward="true" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/infrastructure/domain/context/object_generator.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/aggregate.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context.go">
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/infrastructure/domain/storage/memory_log.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="1194">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/context.go">
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/emirpasic/gods/sets/hashset/hashset.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="447">
+          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/mapstructure/mapstructure.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="754" column="0" lean-forward="true" selection-start-line="754" selection-start-column="0" selection-end-line="754" selection-end-column="0" />
           <folding>
-            <element signature="e#17#72#0" expanded="false" />
+            <element signature="e#412#497#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/identifier.go">
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle-storage-dynamodb/log.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/projector_handler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#19#97#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/event_generator.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="37" column="10" lean-forward="false" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/main/main_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/projector.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="49" column="23" lean-forward="false" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/aggregate.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="90" column="24" lean-forward="true" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/archetype.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding>
+            <marker date="1508357116000" expanded="true" signature="1137:1163" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/aggregate.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="41" column="51" lean-forward="true" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/invariant.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1194">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/command_generator.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <marker date="1508352482000" expanded="true" signature="222:224" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/context_map.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle-storage-inmemory/aggregate_stream.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="13" column="103" lean-forward="true" selection-start-line="13" selection-start-column="103" selection-end-line="13" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="e#14#423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/infrastructure/generators.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/infrastructure/logs.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#90#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/infrastructure/repositories.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/infrastructure/map.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#577#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/rule/rule.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/infrastructure/checker.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/invariant.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
@@ -614,88 +779,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/application/bus/bus.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <marker date="1506957125000" expanded="false" signature="20:64" ph="..." />
-            <marker date="1506957125000" expanded="true" signature="995:1104" ph="{...}" />
-            <marker date="1506957125000" expanded="true" signature="1010:1102" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/command/generator.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/handler.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/infrastructure/core/uuid/identifier_generator.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#103#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/entity/product.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#162#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/add-product.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="903">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
-            <element signature="e#17#109#0" expanded="false" />
+            <element signature="e#17#417#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/change-product-quantity.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="756">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#17#163#0" expanded="false" />
+            <element signature="e#17#462#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/checkout.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="546">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#17#330#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/create.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#17#376#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/remove-product.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="882">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
-            <element signature="e#17#77#0" expanded="false" />
+            <element signature="e#17#376#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -705,16 +834,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/created.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#15#75#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,18 +855,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-added.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="42">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#15#107#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-quantity-changed.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#15#161#0" expanded="false" />
+            <element signature="e#15#157#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -755,154 +876,27 @@
     <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/product-removed.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#15#75#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart/invariant.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart/projection.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/has_active_cart/projector.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/infrastructure/domain.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/value/quantity.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate_snapshot.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/archetype.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding>
-            <marker date="1506960725000" expanded="true" signature="550:952" ph="{...}" />
-            <marker date="1506960725000" expanded="true" signature="1029:1172" ph="{...}" />
-            <marker date="1506960725000" expanded="true" signature="1343:1504" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/projector/projector.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding>
-            <element signature="e#19#213#0" expanded="false" />
-            <marker date="1506960617000" expanded="true" signature="237:363" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="619:621" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="703:980" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="763:893" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="844:863" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="1013:1049" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="1109:1456" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="1230:1247" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="1318:1335" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="1505:1528" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="1584:1609" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="1737:1873" ph="{...}" />
-            <marker date="1506960617000" expanded="true" signature="1758:1871" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate_context.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/go/src/github.com/with-hindsight/chronicle/src/domain/context/aggregate/archetype.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/main/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#289#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/infrastructure/descriptors.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/infrastructure/repositories.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#172#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/infrastructure/logs.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/command/create.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#17#77#0" expanded="true" />
+            <element signature="e#15#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/invariant.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/projector.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#251#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -912,58 +906,75 @@
         <state relative-caret-position="525">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="e#14#150#0" expanded="true" />
+            <element signature="e#14#146#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/infrastructure/generators.go">
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/entity/product.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="890">
-          <caret line="46" column="1" lean-forward="true" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
+        <state relative-caret-position="357">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#24#423#0" expanded="true" />
+            <element signature="e#16#158#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/projector.go">
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/value/quantity.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/invariant.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#14#243#0" expanded="true" />
+            <element signature="e#22#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/aggregate.go">
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/projection.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="210">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#14#296#0" expanded="true" />
+            <element signature="e#22#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/invariant.go">
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/projector.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="567">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#14#84#0" expanded="true" />
+            <element signature="e#22#194#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/archetype.go">
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/invariant/active_carts/query.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="46" column="1" lean-forward="true" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#14#278#0" expanded="true" />
-            <marker date="1506960725000" expanded="true" signature="1401:1504" ph="{...}" />
+            <element signature="e#22#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/e-commerce/shopping/aggregate/cart/event/created.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#15#71#0" expanded="true" />
           </folding>
         </state>
       </provider>

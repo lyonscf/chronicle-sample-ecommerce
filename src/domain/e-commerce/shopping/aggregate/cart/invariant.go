@@ -90,7 +90,6 @@ func (self *Invariant) HasActiveCart(shopper domain.Identifier) rule.Rule {
 
 	return self.Checker.Check(
 		active_carts.Invariant{
-			Cart: self.Snapshot.Id,
 			Shopper: shopper,
 		},
 	)

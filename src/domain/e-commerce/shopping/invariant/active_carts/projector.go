@@ -12,11 +12,14 @@ type Projector struct {
 
 func (self *Projector) Handle(evt projection.Event) error {
 
-	switch evt.Payload().(type) {
+	switch event := evt.Payload().(type) {
 
 	case event.Created:
 
-		return self.Projection.Add(evt.AggregateId())
+		return self.Projection.Add(
+			evt.AggregateId(),
+			event.ShopperId,
+		)
 
 	case event.CheckedOut:
 

@@ -4,5 +4,5 @@ import "github.com/with-hindsight/chronicle/domain"
 
 type Query interface {
 
-	Exists(cart domain.Identifier, shopper domain.Identifier) bool
+	Exists(shopper domain.Identifier) bool
 }

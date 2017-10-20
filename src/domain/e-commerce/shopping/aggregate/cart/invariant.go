@@ -3,8 +3,8 @@ package cart
 import (
 	"errors"
 	"github.com/with-hindsight/chronicle/domain"
+	"github.com/with-hindsight/chronicle/domain/aggregate"
 	"github.com/with-hindsight/chronicle/domain/rule"
-	"github.com/with-hindsight/chronicle/src/domain/context/aggregate"
 	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/invariant/active_carts"
 )
 

@@ -1,7 +1,7 @@
 package active_carts
 
 import (
-	"github.com/with-hindsight/chronicle/src/domain/projection"
+	"github.com/with-hindsight/chronicle/domain/projection"
 	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/event"
 )
 

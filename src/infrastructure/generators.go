@@ -1,16 +1,21 @@
 package infrastructure
 
 import (
-	"github.com/with-hindsight/chronicle/infrastructure"
+	"github.com/with-hindsight/chronicle/infrastructure/generator"
 	"github.com/with-hindsight/chronicle-identifier-uuid"
 )
 
 var IdentifierGenerator = uuid.NewGenerator()
 
-var CommandGenerator = infrastructure.NewCommandGenerator(DomainMap)
-var EventGenerator = infrastructure.NewEventGenerator(IdentifierGenerator)
+var CommandGenerator = generator.NewCommandGenerator(ContextMap)
+var EventGenerator = generator.NewEventGenerator(IdentifierGenerator)
+
+var AggregateGenerator = generator.NewAggregateGenerator(
+	EventGenerator,
+	&StubChecker{},
+)
 
 func Boot() {
 
-	EventGenerator.SetContextMap(DomainMap)
+	EventGenerator.SetContextMap(ContextMap)
 }

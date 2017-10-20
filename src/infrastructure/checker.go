@@ -12,7 +12,7 @@ type StubChecker struct {
 func (self *StubChecker) Check(invariant interface{}) rule.Rule {
 
 	return rule.NewRule(
-		true,
+		false,
 		errors.New("Satisfied!"),
 		errors.New("Not satisfied!"),
 	)

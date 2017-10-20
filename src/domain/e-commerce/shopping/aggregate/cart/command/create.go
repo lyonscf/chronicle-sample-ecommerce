@@ -19,7 +19,9 @@ func (self Create) Check(inv aggregate.Invariant) (bool, []error) {
 
 	return rule.Assert(
 		rule.Not(invariant.Created()),
-		rule.Has(invariant.ActiveCart()),
+		rule.Not(invariant.HasActiveCart(
+			self.ShopperId,
+		)),
 	)
 }
 

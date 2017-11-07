@@ -10,9 +10,9 @@ type Projector struct {
 	State *State
 }
 
-func (self *Projector) Handle(evt domain.Event) {
+func (self *Projector) Handle(domain_evt domain.Event) {
 
-	switch event := evt.Payload().(type) {
+	switch event := domain_evt.Payload().(type) {
 
 	case event.Created:
 

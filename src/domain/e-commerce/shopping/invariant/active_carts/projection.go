@@ -7,7 +7,7 @@ import (
 
 var (
 	ErrShopperHasActiveCart = errors.New("This shopper already has an active cart.")
-	ErrCartDoesNotExists = errors.New("The cart cannot be removed, because it does not exist.")
+	ErrCartDoesNotExist = errors.New("The cart cannot be removed, because it does not exist.")
 )
 
 type Projection interface {

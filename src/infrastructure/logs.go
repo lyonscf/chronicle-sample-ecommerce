@@ -12,3 +12,6 @@ var AggregateStream = memory.NewAggregateStream(
 	EventStore,
 )
 
+var EventStream = &memory.Stream{
+
+}

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/with-hindsight/chronicle/application"
 	"github.com/with-hindsight/chronicle/application/bus"
 	"github.com/lyonscf/chronicle-sample-ecommerce/src/infrastructure"
 	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/command"
@@ -19,24 +18,25 @@ var Bus = bus.New(
 
 func main() {
 
+	var request *bus.Request
+	var response *bus.Response
+
 	infrastructure.Boot()
 
 	////////////////
 	////////////////
 	////////////////
 
-	aggregate_id := IdentifierGenerator.New()
-
-	commands := []application.Command{
+	request = bus.NewRequest(
+		IdentifierGenerator.New(),
 		command.Create {
 			ShopperId: IdentifierGenerator.New(),
 		},
-	}
+	)
 
 	for i := 0 ; i < 2000 ; i++ {
 
-		commands = append(
-			commands,
+		request.Commands = append(request.Commands,
 			command.AddProduct {
 				Product: entity.Product{
 					Id: IdentifierGenerator.New(),
@@ -46,58 +46,32 @@ func main() {
 		)
 	}
 
-	_,_,err := Bus.DispatchMany(
-		aggregate_id,
-		commands,
-	)
+	response = Bus.Dispatch(request).Wait()
 
-	spew.Dump(err)
+	spew.Dump(response.Error)
 
-	_,_,err = Bus.DispatchMany(
-		aggregate_id,
-		[]application.Command{
+	response = Bus.Dispatch(
+		bus.NewRequest(
+			response.AggregateId(),
 			command.AddProduct {
 				Product: entity.Product{
 					Id: IdentifierGenerator.New(),
 					Quantity: 5,
 				},
 			},
-		},
-	)
+		),
+	).Wait()
 
-	spew.Dump(err)
+	spew.Dump(response.Error)
 
-	_,_,err = Bus.DispatchMany(
-		aggregate_id,
-		[]application.Command{
+	response = Bus.Dispatch(
+		bus.NewRequest(
+			response.AggregateId(),
 			command.Checkout {},
-		},
-	)
+		),
+	).Wait()
 
-	spew.Dump(err)
+	spew.Dump(response.Error)
 
-	/*
-	_,_,err = Bus.DispatchMany(
-		aggregate_id,
-		[]application.Command{
-			command.Checkout {},
-		},
-	)
-
-	spew.Dump(err)
-
-	*/
-
-	//spew.Dump(infrastructure.AggregateRepository.InstanceSnapshots())
-	//spew.Dump(infrastructure.EventLog)
-
-	/*
-	fmt.Println("Commands")
-	result, err := json.MarshalIndent(commands, ""," ")
-	fmt.Println(string(result))
-
-	fmt.Println("Events")
-	result, err = json.MarshalIndent(events, ""," ")
-	fmt.Println(string(result))
-	*/
+	spew.Dump(infrastructure.ProjectionRepository.Snapshots())
 }

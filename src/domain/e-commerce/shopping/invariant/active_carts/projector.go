@@ -23,7 +23,9 @@ func (self *Projector) Handle(evt projection.Event) error {
 
 	case event.CheckedOut:
 
-		return self.Projection.Remove(evt.AggregateId())
+		return self.Projection.Remove(
+			evt.AggregateId(),
+		)
 	}
 
 	return projection.ErrHandlerNotExists

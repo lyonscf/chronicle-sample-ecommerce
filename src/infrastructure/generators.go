@@ -15,6 +15,10 @@ var AggregateGenerator = generator.NewAggregateGenerator(
 	&StubChecker{},
 )
 
+var ProjectionGenerator = generator.NewProjectorGenerator(
+	EventStream,
+)
+
 func Boot() {
 
 	EventGenerator.SetContextMap(ContextMap)

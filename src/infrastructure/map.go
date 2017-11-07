@@ -4,6 +4,8 @@ import (
 	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/command"
 	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart/event"
 	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/aggregate/cart"
+	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/invariant/active_carts"
+	"github.com/lyonscf/chronicle-sample-ecommerce/src/domain/e-commerce/shopping/invariant/active_carts/memory"
 	"github.com/with-hindsight/chronicle/infrastructure"
 	"github.com/with-hindsight/chronicle/domain/context_map"
 	"reflect"
@@ -18,6 +20,15 @@ var CartAggregate = &context_map.Aggregate{
 		Domain: &context_map.Domain{
 			Id: infrastructure.IdentifierString("b9a185c3"),
 			Name: "e-commerce",
+		},
+		Projectors: []*context_map.Projector{
+			&context_map.Projector{
+				Id: infrastructure.IdentifierString("1631ad2a"),
+				Handler: reflect.TypeOf(active_carts.Projector{}),
+				Invariant: reflect.TypeOf(active_carts.Invariant{}),
+				Projection: memory.NewProjection(memory.SampleStore),
+				Query: memory.NewProjection(memory.SampleStore),
+			},
 		},
 	},
 	Archetype: &context_map.Archetype{
